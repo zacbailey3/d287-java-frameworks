@@ -11,7 +11,11 @@ The user interface should include the shop name, the product names, and the name
 
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-    *
+    * Added about page and more basic css to make look "ok". 
+    * made new Java controller "AboutController" for navigation. (src/main/java/com.example.demo/controllers/AboutController)
+    * added nav bar on home page and about page to and from each page and a button "back to home" on about page 
+        -main: line: 23
+        -about: line: 23,31
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
     *

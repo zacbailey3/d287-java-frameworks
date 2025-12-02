@@ -16,6 +16,42 @@ h1, h2 {
     text-align: center;
 }
 
+nav {
+    text-align: center;
+    display: block;
+    margin: 20px auto 40px auto;
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: Black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Add spacing and a nice card-style container */
+.about-container {
+    background: white;
+    color: #333;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Make the About text look better */
+.about-container h2 {
+    line-height: 1.6;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: left;
+}
+
 .container {
     max-width: 1100px;
 }
@@ -25,13 +61,13 @@ h1, h2 {
 .btn {
     border-radius: 8px !important;
     padding: 6px 14px !important;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 /* Modern primary color */
 .btn-primary {
-    background-color: #0066ff !important;
-    border-color: #0056e0 !important;
+    background-color: darkgrey !important;
+    border-color: black !important;
 }
 
 .btn-primary:hover {
