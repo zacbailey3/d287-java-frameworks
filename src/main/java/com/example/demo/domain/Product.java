@@ -23,6 +23,7 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+
     String name;
     @Min(value = 0, message = "Price value must be positive")
     double price;
