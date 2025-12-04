@@ -6,11 +6,15 @@ import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
 import com.example.demo.service.PartService;
 import com.example.demo.service.ProductService;
+import com.example.demo.service.ProductServiceImpl;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.activation.DataHandler;
 import java.util.List;
 
 /**
@@ -40,6 +44,7 @@ public class MainScreenControllerr {
         this.partService=partService;
         this.productService=productService;
     }
+
     @GetMapping("/mainscreen")
     public String listPartsandProducts(Model theModel, @Param("partkeyword") String partkeyword, @Param("productkeyword") String productkeyword){
         //add to the sprig model
@@ -52,4 +57,6 @@ public class MainScreenControllerr {
         theModel.addAttribute("productkeyword",productkeyword);
         return "mainscreen";
     }
+
+
 }

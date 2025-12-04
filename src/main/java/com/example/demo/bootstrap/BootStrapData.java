@@ -41,8 +41,8 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-        if (partRepository.count() == 0 && outsourcedPartRepository.count() == 0) {            //46-90 parts and outsourced objects, 119-132 products
-            // object for Parts (Hardware)
+        if (partRepository.count() == 0) {            //46-90 parts objects, 119-132 products
+            // sample inhouse part
             InhousePart board = new InhousePart();
             board.setName("Shop Board");
             board.setPrice(45);
@@ -51,9 +51,10 @@ public class BootStrapData implements CommandLineRunner {
 
             partRepository.save(board);
 
-            //outsourced objects
-            InhousePart bearings = new InhousePart();
+            //sample outsourced
+            OutsourcedPart bearings = new OutsourcedPart();
             bearings.setName("Bearings");
+            bearings.setCompanyName("Bones Swiss");
             bearings.setPrice(20);
             bearings.setInv(10);
             bearings.setId(2);
@@ -88,47 +89,24 @@ public class BootStrapData implements CommandLineRunner {
             partRepository.save(trucks);
         }
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
-        }
-
-        System.out.println(thePart.getCompanyName());
-        */
-
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
         for(OutsourcedPart part:outsourcedParts){
             System.out.println(part.getName()+" "+part.getCompanyName());
         }
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
-
         if (productRepository.count() == 0) {
+            //sample parts
             Product tShirt = new Product("Shop Tee",15.0,30);
-            Product bakerBoard = new Product("Baker Board",75.0,10);
+            Product completeBoard = new Product("Baker Board",75.0,10);
             Product lessons = new Product("Lessons",100.0,5);
             Product stickers = new Product("Stickers",2.00,150);
-            Product scooter = new Product("Scooter",60.0,5);
+            Product cruiserBoard = new Product("Scooter",60.0,5);
 
             productRepository.save(tShirt);
-            productRepository.save(bakerBoard);
+            productRepository.save(completeBoard);
             productRepository.save(lessons);
             productRepository.save(stickers);
-            productRepository.save(scooter);
+            productRepository.save(cruiserBoard);
         }
 
         System.out.println("Started in Bootstrap");

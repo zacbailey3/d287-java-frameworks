@@ -19,17 +19,16 @@ D.  Add an “About” page to the application to describe your chosen customer�
         -about: line: 23,31
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
-    * created sample inventory on lines 46-90 for inhouse/outsourced parts. On lines 119-132 for products. Saved the sample products to the correct repositories.
+    * created sample inventory on lines 46-90 for parts. On lines 119-132 for products. Saved the sample products to the correct repositories.
 
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, 
-the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
-    *
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 • The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
-    *
+    * created "buy now" button on mainscreen line: 92 
+    * mapped buy now button to buyProduct within /AddProductController on line 177. gave logic to show success/unsuccessful purchase.
+    * decrements inv and saves new value
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
