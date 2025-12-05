@@ -117,6 +117,7 @@ public abstract class Part implements Serializable {
     public String toString(){
         return this.name;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
