@@ -4,6 +4,7 @@
 
 C.  Customize the HTML user interface for your customer’s application. 
 The user interface should include the shop name, the product names, and the names of the parts.
+
     * added stlyesheet line 11 
     * added basic styling to make easier to read (in demo.css)
     * line 22 "Zac's Skateboard Shop"
@@ -12,6 +13,7 @@ The user interface should include the shop name, the product names, and the name
 
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+
     * Added about page and more basic css to make look "ok". 
     * made new Java controller "AboutController" for navigation. (src/main/java/com.example.demo/controllers/AboutController)
     * added nav bar on home page and about page to and from each page and a button "back to home" on about page 
@@ -19,6 +21,7 @@ D.  Add an “About” page to the application to describe your chosen customer�
         -about: line: 23,31
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+
     * created sample inventory on lines 46-90 for parts. On lines 119-132 for products. Saved the sample products to the correct repositories.
 
 
@@ -26,6 +29,7 @@ F.  Add a “Buy Now” button to your product list. Your “Buy Now” button m
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 • The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
+
     * created "buy now" button on mainscreen line: 92 
     * mapped buy now button to buyProduct within /AddProductController on line 177. gave logic to show success/unsuccessful purchase.
     * decrements inv and saves new value
@@ -36,19 +40,25 @@ G.  Modify the parts to track maximum and minimum inventory by doing the followi
 •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+
     * added min max variables in /Part lines: 31 - 36. Added Get/set MIN/MAX inv in /part repo lines: 106 - 121.
-    * Updated /BootStrapData sample inv to have min/max vaules lines: 51-21, 63-64, 74-75, 85-86, 96-97
-    * added to /inhouse.html, /outsource.html  forms to have min/max vaules and routed to corret min/max repos 
-    * created /InventoryValidator && /ValidInvrntory to ensure inventory valuse are correct and between ranges. 
+    * Updated /BootStrapData sample inv to have min/max values lines: 51-21, 63-64, 74-75, 85-86, 96-97
+    * added to /inhouse.html, /outsource.html  forms to have min/max values and routed to correct min/max repos 
+    * created /InventoryValidator && /ValidInventory to ensure inventory values are correct and between ranges. 
 
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
-    *
+
+    * include @ValidInventory in Part Domain line 23,
+    * inhouse/outsourced part forms display error messages lines 35-41 (both pages)
+    * edited EnufPartsValidator line:36-40 to update to prompt if inv below minimum
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-    *
+
+    *included min/max text in /PartTest lines 103-118
 
 J.  Remove the class files for any unused validators in order to clean your code. 
+
     *

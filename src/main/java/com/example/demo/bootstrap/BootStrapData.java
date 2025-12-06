@@ -61,7 +61,7 @@ public class BootStrapData implements CommandLineRunner {
             bearings.setInv(10);
             bearings.setId(2);
             bearings.setMinInv(1);
-            bearings.setMaxInv(20);
+            bearings.setMaxInv(50);
 
             partRepository.save(bearings);
 
@@ -72,7 +72,7 @@ public class BootStrapData implements CommandLineRunner {
             wheels.setInv(32);
             wheels.setId(3);
             wheels.setMinInv(1);
-            wheels.setMaxInv(35);
+            wheels.setMaxInv(50);
 
             partRepository.save(wheels);
 
@@ -80,10 +80,10 @@ public class BootStrapData implements CommandLineRunner {
             gripTape.setName("Grip Tape");
             gripTape.setCompanyName("MOB Grip");
             gripTape.setPrice(5);
-            gripTape.setInv(50);
+            gripTape.setInv(45);
             gripTape.setId(4);
             gripTape.setMinInv(1);
-            gripTape.setMaxInv(60);
+            gripTape.setMaxInv(50);
 
             partRepository.save(gripTape);
 
@@ -94,7 +94,7 @@ public class BootStrapData implements CommandLineRunner {
             trucks.setInv(20);
             trucks.setId(5);
             trucks.setMinInv(1);
-            trucks.setMaxInv(25);
+            trucks.setMaxInv(50);
 
             partRepository.save(trucks);
         }
